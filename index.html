@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#142d4e"><meta name="description" content="Hotel New Downtown Hisar management app">
+<title>Hotel New Downtown Hisar</title>
+<link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icons/icon-192.png">
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;font-family:Arial,sans-serif;background:#f1f5f9}
+header{height:48px;display:flex;align-items:center;padding:0 12px;color:white;background:#142d4e;font-weight:700}
+main{height:calc(100% - 48px)}iframe{width:100%;height:100%;border:0;background:white}
+#fallback{display:none;padding:20px;text-align:center}#fallback a{display:inline-block;padding:12px 18px;color:white;background:#1769aa;border-radius:8px;text-decoration:none}
+</style></head>
+<body>
+<header>Hotel New Downtown Hisar</header>
+<main>
+<iframe id="hotelApp" title="Hotel New Downtown Hisar" src="https://script.google.com/macros/s/AKfycbwDuY33SR0R9ehycekiYEW0XjVX422ow4a1F934QY1KlnTLNmvgZRuuhvgny5ouqWSR/exec" allow="camera; microphone"></iframe>
+<div id="fallback"><p>If the hotel software does not load inside this app, open it directly:</p><a href="https://script.google.com/macros/s/AKfycbwDuY33SR0R9ehycekiYEW0XjVX422ow4a1F934QY1KlnTLNmvgZRuuhvgny5ouqWSR/exec" target="_blank" rel="noopener">Open Hotel Software</a></div>
+</main>
+<script>
+if ('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(err=>console.log(err)));
+document.getElementById('hotelApp').addEventListener('error',()=>document.getElementById('fallback').style.display='block');
+</script></body></html>
